@@ -8,6 +8,7 @@ import { StarComponent } from './star/star.component';
 import { ReplacePipe } from './pipe/replace.pipe';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule } from '@angular/router';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { RouterModule } from '@angular/router';
     CourseListComponent,
     StarComponent,
     ReplacePipe,
-    NavbarComponent
+    NavbarComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +32,10 @@ import { RouterModule } from '@angular/router';
         path: 'courses',
         component: CourseListComponent
       },
+      {
+        path:'**',
+        component: NotFoundComponent
+      }
     ])
   ],
   providers: [],

@@ -1,0 +1,18 @@
+.container-not-found {
+  min-height: calc(100vh - 68px);
+}
+
+.error-text {
+  font-size: 130px;
+}
+
+
+@media (min-width: 768px) {
+  .error-text {
+    font-size: 220px;
+  }
+
+  .container-not-found {
+    min-height: calc(100vh - 68px);
+  }
+}
