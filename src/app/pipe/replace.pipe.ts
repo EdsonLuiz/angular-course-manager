@@ -1,12 +1,14 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
+
+
 @Pipe({
   name: 'replace'
 })
 export class ReplacePipe implements PipeTransform {
 
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+  transform(value: string, char: string, valueToReplace: string): string {
+    return value.replace(char, valueToReplace)
   }
 
 }
