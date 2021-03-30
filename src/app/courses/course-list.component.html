@@ -14,7 +14,9 @@
     </thead>
     <tbody>
       <tr class="bg-gray-100 border-b border-gray-200" *ngFor="let course of courses">
-        <td class="px-4 py-3">{{course.imageUrl}}</td>
+        <td class="w-2 px-4 py-3">
+          <img [src]="course.imageUrl" [alt]="course.name">
+        </td>
         <td class="px-4 py-3">{{course.name}}</td>
         <td class="px-4 py-3">{{course.price}}</td>
         <td class="px-4 py-3">{{course.code}}</td>
