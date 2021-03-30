@@ -17,6 +17,7 @@
         <th class="px-4 py-3">Code</th>
         <th class="px-4 py-3">Release</th>
         <th class="px-4 py-3">Rating</th>
+        <th class="px-4 py-3">Options</th>
       </tr>
     </thead>
     <tbody>
@@ -30,6 +31,12 @@
         <td class="px-4 py-3">{{course.releaseDate | date: 'dd/MM/yyyy'}}</td>
         <td class="px-4 py-3">
           <app-star [rating]="course.rating"></app-star>
+        </td>
+        <td class="px-4 py-3">
+          <a
+            class="focus:outline-none text-white text-sm py-2.5 px-5 rounded-md bg-blue-500 hover:bg-blue-600 hover:shadow-lg"
+            [routerLink]="['/courses/info', course.id]"
+            routerLinkActive="router-link-active" >Show</a>
         </td>
       </tr>
     </tbody>
