@@ -26,7 +26,7 @@
         </td>
         <td class="px-4 py-3">{{course.name}}</td>
         <td class="px-4 py-3">{{course.price}}</td>
-        <td class="px-4 py-3">{{course.code}}</td>
+        <td class="px-4 py-3">{{course.code | replace: '-': ' '}}</td>
         <td class="px-4 py-3">{{course.releaseDate | date: 'dd/MM/yyyy'}}</td>
         <td class="px-4 py-3">
           <app-star [rating]="course.rating"></app-star>
