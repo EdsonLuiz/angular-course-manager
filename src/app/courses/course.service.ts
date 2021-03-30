@@ -11,6 +11,25 @@ export class CourseService {
   get courses() {
     return [...COURSE]
   }
+
+  courseByYd(id: number):Course  {
+    if(!id) {
+      return {} as Course
+    }
+    const returnedQuery = this.courses.find(course => course.id === id)
+    if(!returnedQuery) {
+      return {} as Course
+    }
+    return returnedQuery
+  }
+
+  save(course: Course) {
+    if(!this.courseByYd(course.id)) {
+      return
+    }
+
+    COURSE[course.id] = course
+  }
 }
 
 let COURSE: Course[] = [

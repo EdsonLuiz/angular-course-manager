@@ -1,1 +1,61 @@
-<h2>Course Id: {{courseId}}</h2>
+<section class="max-w-full p-5 mx-auto">
+  <h2>Course Info</h2>
+
+  <form #courseForm="ngForm">
+    <div class="py-8 space-y-4 text-base leading-6 text-gray-700 sm:text-lg sm:leading-7">
+      <div class="flex flex-col">
+        <label class="text-sm leading-loose text-gray-500">Name</label>
+        <input
+          required
+          [(ngModel)]="course.name"
+          name="name"
+          #courseName="ngModel"
+          type="text"
+          [ngClass]="{'focus:ring-red-500 focus:border-red-500 border-red-500': courseName.invalid}"
+          class="w-full px-4 py-2 text-gray-600 border border-gray-300 rounded-md focus:ring-gray-500 focus:border-gray-900 sm:text-sm focus:outline-none" placeholder="Course name">
+      </div>
+      <div class="flex flex-col">
+        <label class="text-sm leading-loose text-gray-500">Price</label>
+        <input
+          required
+          [(ngModel)]="course.price"
+          name="price"
+          #coursePrice="ngModel"
+          type="number"
+          [ngClass]="{'focus:ring-red-500 focus:border-red-500 border-red-500': coursePrice.invalid}"
+          class="w-full px-4 py-2 text-gray-600 border border-gray-300 rounded-md focus:ring-gray-500 focus:border-gray-900 sm:text-sm focus:outline-none" placeholder="course price">
+      </div>
+      <div class="flex flex-col">
+        <label class="text-sm leading-loose text-gray-500">Rating</label>
+        <input
+          required
+          [(ngModel)]="course.rating"
+          name="rating"
+          #courseRating="ngModel"
+          type="number"
+          [ngClass]="{'focus:ring-red-500 focus:border-red-500 border-red-500': courseRating.invalid}"
+          class="w-full px-4 py-2 text-gray-600 border border-gray-300 rounded-md focus:ring-gray-500 focus:border-gray-900 sm:text-sm focus:outline-none" placeholder="course rating">
+      </div>
+      <div class="flex flex-col">
+        <label class="text-sm leading-loose text-gray-500">Description</label>
+        <textarea
+          required
+          [(ngModel)]="course.description"
+          name="description"
+          #courseDescription="ngModel"
+          [ngClass]="{'focus:ring-red-500 focus:border-red-500 border-red-500': courseDescription.invalid}"
+          class="w-full px-4 py-2 text-gray-600 border border-gray-300 rounded-md focus:ring-gray-500 focus:border-gray-900 sm:text-sm focus:outline-none" placeholder="course rating"></textarea>
+      </div>
+
+    </div>
+
+    <button
+      [disabled]="courseForm.invalid"
+      (click)="save"
+      class="focus:outline-none text-white text-sm py-2.5 px-5 rounded-md bg-blue-500 hover:bg-blue-600 hover:shadow-lg"
+      >
+      Save
+    </button>
+  </form>
+
+</section>
