@@ -22,10 +22,12 @@
       class="flex flex-col items-start w-full lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto lg:items-center lg:h-auto"
     >
       <a
+        *ngFor="let link of links"
+        routerLink="{{link.route}}" routerLinkActive="router-link-active"
         href="#"
         class="items-center justify-center w-full px-3 py-2 text-gray-400 rounded lg:inline-flex lg:w-auto hover:bg-gray-900 hover:text-white"
       >
-        <span>Home</span>
+        <span>{{link.content}}</span>
       </a>
     </div>
   </div>
