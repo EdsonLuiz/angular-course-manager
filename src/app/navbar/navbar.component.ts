@@ -14,7 +14,7 @@ export class NavbarComponent implements OnInit {
 
   links: LinkObject[] = [
     {content: 'Home', route: 'courses'},
-    {content: 'Courses', route: 'courses'},
+    {content: 'Courses', route: 'bingo'},
   ]
 
   constructor() { }
