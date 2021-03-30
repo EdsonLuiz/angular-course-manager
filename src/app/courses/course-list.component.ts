@@ -11,15 +11,32 @@ import { Course } from './course';
 export class CourseListComponent implements OnInit {
 
   private _courses: Course[] = []
+  private _filteredCourses: Course[]= [];
+  private _filterBy: string = '';
 
   constructor(private _courseService: CourseService) { }
 
   ngOnInit(): void {
     this._courses = this._courseService.courses
+    this._filteredCourses = this._courses
   }
 
   get courses() {
     return [...this._courses]
+  }
+
+  set filter(value: string) {
+    this._filterBy = value;
+
+    this._filteredCourses = this._courses.filter(course => course.name.toLowerCase().includes(value))
+  }
+
+  get filter() {
+    return this._filterBy;
+  }
+
+  get filteredCourses() {
+    return [...this._filteredCourses]
   }
 
 }

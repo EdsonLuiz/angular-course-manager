@@ -1,6 +1,13 @@
 <section class="max-w-full p-5 mx-auto">
   <h2 class="mb-8 text-2xl">Course List</h2>
 
+  <div class="py-8 space-y-4 text-base leading-6 text-gray-700 sm:text-lg sm:leading-7">
+    <div class="flex flex-col">
+      <label class="text-sm leading-loose text-gray-500">Filter by</label>
+      <input [(ngModel)]="filter" type="text" class="w-full px-4 py-2 text-gray-600 border border-gray-300 rounded-md focus:ring-gray-500 focus:border-gray-900 sm:text-sm focus:outline-none" placeholder="Event title">
+    </div>
+  </div>
+
   <table class="w-full text-gray-800 bg-gray-200 rounded-t-lg ">
     <thead>
       <tr class="text-left border-b-2 border-gray-300">
@@ -13,7 +20,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr class="bg-gray-100 border-b border-gray-200" *ngFor="let course of courses">
+      <tr class="bg-gray-100 border-b border-gray-200" *ngFor="let course of filteredCourses">
         <td class="w-2 px-4 py-3">
           <img [src]="course.imageUrl" [alt]="course.name">
         </td>
